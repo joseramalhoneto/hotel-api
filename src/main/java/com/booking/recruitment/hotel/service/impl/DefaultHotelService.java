@@ -63,14 +63,11 @@ class DefaultHotelService implements HotelService {
   public List<Hotel> getClosestHotels(Long id) {
     List<Hotel> hotels = this.getHotelsByCity(id);
 
-    hotels.stream()
+    List<Hotel> result = hotels.stream()
             .sorted(Comparator.comparing(Hotel::getDistance))
+            .limit(3)
             .collect(Collectors.toList());
 
-    List<Hotel> result = null;
-    result.add(hotels.get(0));
-    result.add(hotels.get(1));
-    result.add(hotels.get(2));
     return result;
   }
 }
