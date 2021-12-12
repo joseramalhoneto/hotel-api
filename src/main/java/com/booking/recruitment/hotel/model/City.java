@@ -14,7 +14,7 @@ public class City implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String country6;
+  private String country10;
   private String name;
 
   private double cityCentreLatitude;
